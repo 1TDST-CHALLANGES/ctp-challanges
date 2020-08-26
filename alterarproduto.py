@@ -1,4 +1,4 @@
-import menuXPTO
+import main
 
 
 def alterarproduto():
@@ -9,4 +9,4 @@ def alterarproduto():
         menuXPTO.qtdeproduto[menuXPTO.codproduto.index(codigoproduto)] = int(input("Nova quantidade: "))
         print("Descrição alterada para: ", menuXPTO.descproduto, "Quantidade alterada para: ", menuXPTO.qtdeproduto)
     else:
-        print("Produto não cadastrado.")
+        print("\033[31mProduto não cadastrado.\033[m")
