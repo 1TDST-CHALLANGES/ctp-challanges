@@ -20,18 +20,18 @@ while opcao != 7:
     elif opcao == 2:
         senha = input("Digite sua Senha: ")
         if senha == "yN1825*a":
-            print("Acesso permitido.")
+            print("\033[32mAcesso permitido.\033[m")
             alterarproduto.alterarproduto()
         else:
-            print("SENHA INCORRETA")
+            print("\033[31mSENHA INCORRETA\033[m")
 
     elif opcao == 3:
         senha = input("Digite sua Senha: ")
         if senha == "yN1825*a":
-            print("ACESSO PERMITIDO")
+            print("\033[32mACESSO PERMITIDO\033[m")
             removeproduto.removerproduto()
         else:
-            print("SENHA INCORRETA")
+            print("\033[31mSENHA INCORRETA\033[m")
 
     elif opcao == 4:
         print(sorted(produtos))
@@ -47,4 +47,4 @@ while opcao != 7:
         break
 
     else:
-        print("Opção inválida!")
+        print("\033[31mOpção inválida!\033[m")
