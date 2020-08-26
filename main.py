@@ -1,6 +1,6 @@
-import cadastrarproduto
-import alterarproduto
-import removeproduto
+import alterar_produto
+import cadastrar_produto
+import remove_produto
 
 opcao = 0
 
@@ -15,13 +15,13 @@ while opcao != 7:
         "\t1. Cadastrar Produto\n\t2. Alterar Produto\n\t3. Excluir Produto\n\t4. Listar Estoque de Peça\n\t5. "
         "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\tDigite a opção desejada: "))
     if opcao == 1:
-        cadastrarproduto.cadastrarprodutos()
+        cadastrar_produto.cadastrar_produtos()
 
     elif opcao == 2:
         senha = input("Digite sua Senha: ")
         if senha == "yN1825*a":
             print("\033[32mAcesso permitido.\033[m")
-            alterarproduto.alterarproduto()
+            alterar_produto.alterar_produto()
         else:
             print("\033[31mSENHA INCORRETA\033[m")
 
@@ -29,7 +29,7 @@ while opcao != 7:
         senha = input("Digite sua Senha: ")
         if senha == "yN1825*a":
             print("\033[32mACESSO PERMITIDO\033[m")
-            removeproduto.removerproduto()
+            remove_produto.removerproduto()
         else:
             print("\033[31mSENHA INCORRETA\033[m")
 
