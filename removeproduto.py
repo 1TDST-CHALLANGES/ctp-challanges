@@ -1,4 +1,4 @@
-import menuxpto
+import main
 
 
 def removerproduto():
@@ -10,10 +10,10 @@ def removerproduto():
             menuXPTO.codproduto.pop(menuXPTO.codproduto.index(codigoproduto))
             menuXPTO.descproduto.pop(menuXPTO.codproduto.index(codigoproduto))
             menuXPTO.qtdeproduto.pop(menuXPTO.codproduto.index(codigoproduto))
-            print("PRODUTO EXCLUIDO COM SUCESSO")
+            print("\033[32mPRODUTO EXCLUIDO COM SUCESSO\033[m")
         elif opcao == "n".upper():
-            print("PRODUTO NÃO EXCLUÍDO")
+            print("\033[31mPRODUTO NÃO EXCLUÍDO\033[m")
         else:
-            print("OPÇÃO INVÁLIDA")
+            print("\033[31mOPÇÃO INVÁLIDA\033[m")
     else:
-        print("PRODUTO NÃO CADASTRADO")
+        print("\033[31mPRODUTO NÃO CADASTRADO\033[m")
