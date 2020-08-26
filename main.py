@@ -8,6 +8,12 @@ cod_produto = []
 desc_produto = []
 qtd_produto = []
 produtos = (cod_produto, desc_produto, qtd_produto)
+estoque = {
+    "desc_prod": (desc_produto),
+    "cod_prod": (cod_produto),
+    "qtd_prod": (qtd_produto)
+}
+
 
 while opcao != 7:
     print('\nMenu')
@@ -18,20 +24,34 @@ while opcao != 7:
         cadastrar_produto.cadastrar_produtos()
 
     elif opcao == 2:
-        senha = input("Digite sua Senha: ")
+        cont = 3
+        senha = int(input("Digite sua senha: "))
+        while senha != "yN1825*a" and cont > 1:
+            print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
+            senha = int(input("Digite novamente."))
+            cont = cont - 1
         if senha == "yN1825*a":
-            print("\033[32mAcesso permitido.\033[m")
-            alterar_produto.alterar_produto()
+            print("\033[31mAcesso permitido!\033[m")
+            alterar_produto.alterarproduto()
         else:
-            print("\033[31mSENHA INCORRETA\033[m")
+            print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
 
     elif opcao == 3:
-        senha = input("Digite sua Senha: ")
+        cont = 3
+        senha = int(input("Digite sua senha: "))
+        while senha != "yN1825*a" and cont > 1:
+            print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
+            senha = int(input("Digite novamente."))
+            cont = cont - 1
         if senha == "yN1825*a":
+
             print("\033[32mACESSO PERMITIDO\033[m")
+
+            print("\033[31mAcesso permitido!\033[m")
+
             remover_produto.removerproduto()
         else:
-            print("\033[31mSENHA INCORRETA\033[m")
+            print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
 
     elif opcao == 4:
         print(sorted(produtos))
