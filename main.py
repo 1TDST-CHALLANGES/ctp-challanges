@@ -7,12 +7,11 @@ opcao = 0
 cod_produto = []
 desc_produto = []
 qtd_produto = []
-produtos = (cod_produto, desc_produto, qtd_produto)
-estoque = {
+estoque = [{
     "desc_prod": (desc_produto),
     "cod_prod": (cod_produto),
     "qtd_prod": (qtd_produto)
-}
+}]
 
 
 while opcao != 7:
@@ -21,7 +20,8 @@ while opcao != 7:
         "\t1. Cadastrar Produto\n\t2. Alterar Produto\n\t3. Excluir Produto\n\t4. Listar Estoque de Peça\n\t5. "
         "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\tDigite a opção desejada: "))
     if opcao == 1:
-        cadastrar_produto.cadastrar_produtos()
+        cadastrar_produto.cadastrarprodutos()
+        print(f'DescProduto: {desc_produto}, Qtde: {qtd_produto}, id: {cod_produto}', estoque)
 
     elif opcao == 2:
         cont = 3
