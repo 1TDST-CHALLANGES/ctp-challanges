@@ -1,13 +1,16 @@
 import alterar_produto
 import cadastrar_produto
-import remove_produto
+import remover_produto
 
 opcao = 0
-
 codproduto = []
 descproduto = []
 qtdeproduto = []
-produtos = (codproduto, descproduto, qtdeproduto)
+estoque = {
+    "desc_prod": (descproduto),
+    "cod_prod": (codproduto),
+    "qtd_prod": (qtdeproduto)
+}
 
 while opcao != 7:
     print('\nMenu')
@@ -39,7 +42,7 @@ while opcao != 7:
             cont = cont - 1
         if senha == "yN1825*a":
             print("\033[31mAcesso permitido!\033[m")
-            remove_produto.removerproduto()
+            remover_produto.removerproduto()
         else:
             print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
 
