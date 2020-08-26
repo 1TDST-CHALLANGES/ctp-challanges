@@ -1,10 +1,10 @@
-import menuXPTO
+import main
 
 
 def cadastrarprodutos():
     codigoproduto = int(input("Código: "))
     if codigoproduto in menuXPTO.codproduto:
-        print("Código já cadastrado")
+        print("\033[31mCódigo já cadastrado\033[m")
     else:
         menuXPTO.produtos.append([menuXPTO.codproduto, menuXPTO.descproduto, menuXPTO.qtdeproduto])
         menuXPTO.codproduto.append(codigoproduto)
