@@ -2,11 +2,11 @@ import main
 
 
 def alterarproduto():
-    codigoproduto = int(input("Código: "))
-    if codigoproduto in main.codproduto:
-        print("Descrição: ", main.descproduto, "Quantidade: ", main.qtdeproduto)
-        main.descproduto[main.codproduto.index(codigoproduto)] = input("Nova descrição: ").upper()
-        main.qtdeproduto[main.codproduto.index(codigoproduto)] = int(input("Nova quantidade: "))
-        print("Descrição alterada para: ", main.descproduto, "Quantidade alterada para: ", main.qtdeproduto)
+    codigo_produto = int(input("Código: "))
+    if codigo_produto in main.cod_produto:
+        print("Descrição: ", main.desc_produto, "Quantidade: ", main.qtd_produto)
+        main.desc_produto[main.cod_produto.index(codigo_produto)] = input("Nova descrição: ").upper()
+        main.qtd_produto[main.cod_produto.index(codigo_produto)] = int(input("Nova quantidade: "))
+        print("Descrição alterada para: ", main.desc_produto, "Quantidade alterada para: ", main.qtd_produto)
     else:
         print("\033[31mProduto não cadastrado.\033[m")

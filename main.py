@@ -1,13 +1,13 @@
 import alterar_produto
 import cadastrar_produto
-import remove_produto
+import remover_produto
 
 opcao = 0
 
-codproduto = []
-descproduto = []
-qtdeproduto = []
-produtos = (codproduto, descproduto, qtdeproduto)
+cod_produto = []
+desc_produto = []
+qtd_produto = []
+produtos = (cod_produto, desc_produto, qtd_produto)
 
 while opcao != 7:
     print('\nMenu')
@@ -29,7 +29,7 @@ while opcao != 7:
         senha = input("Digite sua Senha: ")
         if senha == "yN1825*a":
             print("\033[32mACESSO PERMITIDO\033[m")
-            remove_produto.removerproduto()
+            remover_produto.removerproduto()
         else:
             print("\033[31mSENHA INCORRETA\033[m")
 
