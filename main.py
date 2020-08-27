@@ -33,7 +33,7 @@ while opcao != 7:
             senha = input("Digite novamente.")
             cont = cont - 1
         if senha == "yN1825*a":
-            print("\033[31mAcesso permitido!\033[m")
+            print("\033[32mAcesso permitido!\033[m")
             alterar_produto.alterarproduto()
         else:
             print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
@@ -46,10 +46,7 @@ while opcao != 7:
             senha = int(input("Digite novamente."))
             cont = cont - 1
         if senha == "yN1825*a":
-
-            print("\033[32mACESSO PERMITIDO\033[m")
-
-            print("\033[31mAcesso permitido!\033[m")
+            print("\033[32mAcesso permitido!\033[m")
 
             remover_produto.removerproduto()
         else:
@@ -62,7 +59,7 @@ while opcao != 7:
         print("Comprar produto")
 
     elif opcao == 6:
-        print("Vender produto")
+        remover_produto.removerproduto()
 
     elif opcao == 7:
         print("Saindo...")
