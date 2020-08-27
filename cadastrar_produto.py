@@ -1,6 +1,6 @@
 import main
 
-def cadastrarprodutos():
+def cadastrar_produtos():
 
     if len(main.estoque) == 0:
         cod_produto = input("Código: ")
