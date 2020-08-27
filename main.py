@@ -8,11 +8,7 @@ opcao = 0
 cod_produto = []
 desc_produto = []
 qtd_produto = []
-estoque = [{
-    "desc_prod": (desc_produto),
-    "cod_prod": (cod_produto),
-    "qtd_prod": (qtd_produto)
-}]
+estoque = [cod_produto, desc_produto,  qtd_produto]
 
 
 while opcao != 7:
