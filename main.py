@@ -1,6 +1,7 @@
 import alterar_produto
 import cadastrar_produto
 import remover_produto
+import listar_produtos
 
 opcao = 0
 
@@ -18,17 +19,17 @@ while opcao != 7:
     print('\nMenu')
     opcao = int(input(
         "\t1. Cadastrar Produto\n\t2. Alterar Produto\n\t3. Excluir Produto\n\t4. Listar Estoque de Peça\n\t5. "
-        "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\tDigite a opção desejada: "))
+        "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\nDigite a opção desejada: "))
     if opcao == 1:
         cadastrar_produto.cadastrarprodutos()
-        print(f'DescProduto: {desc_produto}, Qtde: {qtd_produto}, id: {cod_produto}', estoque)
+        print(f"Codigo Produto: {cod_produto}, Descricao Produto: {desc_produto}, Quantidade: {qtd_produto}, ")
 
     elif opcao == 2:
         cont = 3
-        senha = int(input("Digite sua senha: "))
+        senha = input("Digite sua senha: ")
         while senha != "yN1825*a" and cont > 1:
             print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
-            senha = int(input("Digite novamente."))
+            senha = input("Digite novamente.")
             cont = cont - 1
         if senha == "yN1825*a":
             print("\033[31mAcesso permitido!\033[m")
@@ -54,7 +55,7 @@ while opcao != 7:
             print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
 
     elif opcao == 4:
-        print(sorted(produtos))
+        listar_produtos.listarprodutos()
 
     elif opcao == 5:
         print("Comprar produto")

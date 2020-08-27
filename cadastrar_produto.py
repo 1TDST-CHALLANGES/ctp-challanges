@@ -11,4 +11,3 @@ def cadastrarprodutos():
         main.desc_produto.append(descricao_produto)
         main.qtd_produto.append(quantidade_produto)
         main.estoque.append({codigo_produto,descricao_produto,quantidade_produto})
-10
