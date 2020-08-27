@@ -2,6 +2,8 @@ import alterar_produto
 import cadastrar_produto
 import remover_produto
 import listar_produtos
+import comprarproduto
+import venderproduto
 
 opcao = 0
 
@@ -53,10 +55,10 @@ while opcao != 7:
         listar_produtos.listarprodutos()
 
     elif opcao == 5:
-        print("Comprar produto")
+        comprarproduto.comprar()
 
     elif opcao == 6:
-        remover_produto.removerproduto()
+        comprarproduto.vender()
 
     elif opcao == 7:
         print("Saindo...")
