@@ -1,13 +1,11 @@
 import main
 
 def cadastrarprodutos():
-    codigo_produto = int(input("Código: "))
-    if codigo_produto in main.estoque[0]:
+    cod_produto = int(input("Código: "))
+    if cod_produto in main.estoque[0]:
         print("\033[31mCódigo já cadastrado\033[m")
     else:
-        descricao_produto = input("Descrição: ").upper()
-        quantidade_produto = int(input("Quantidade: "))
-        main.cod_produto.append(codigo_produto)
-        main.desc_produto.append(descricao_produto)
-        main.qtd_produto.append(quantidade_produto)
+        desc_produto = input("Descrição: ").upper()
+        qtd_produto = int(input("Quantidade: "))
+        main.estoque.append([cod_produto, desc_produto, qtd_produto])
         

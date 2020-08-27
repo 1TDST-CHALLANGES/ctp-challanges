@@ -8,7 +8,7 @@ opcao = 0
 cod_produto = []
 desc_produto = []
 qtd_produto = []
-estoque = [cod_produto, desc_produto,  qtd_produto]
+estoque = []
 
 
 while opcao != 7:
