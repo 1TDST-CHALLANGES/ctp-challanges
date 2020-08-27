@@ -10,7 +10,6 @@ desc_produto = []
 qtd_produto = []
 estoque = []
 
-
 while opcao != 7:
     print('\nMenu')
     opcao = int(input(
@@ -22,8 +21,6 @@ while opcao != 7:
             cadastrar_produto.cadastrar_produtos()
         elif cod_produto in estoque[0]:
             print("\033[31mCódigo já cadastrado\033[m")
-
-
 
     elif opcao == 2:
         cont = 3
