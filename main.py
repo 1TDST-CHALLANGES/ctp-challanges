@@ -14,6 +14,7 @@ desc_produto = []
 qtd_produto = []
 estoque = []
 
+
 while opcao != 7:
     print('\nMenu')
     opcao = int(input(
@@ -25,13 +26,13 @@ while opcao != 7:
             cod_produto = input("Código: ")
             if len(estoque) == 0:
                 cadastrar_produto.cadastrar_produtos()
-                break
+                exit()
             else:
                 if cod_produto in estoque[0]:
                     print("\033[31mCódigo já cadastrado\033[m")
                 else:
                     cadastrar_produto.cadastrar_produtos()
-                    break
+                    exit()
         print(f"Codigo Produto: {cod_produto}, Descricao Produto: {desc_produto}, Quantidade: {qtd_produto}, ")
 
     elif opcao == 2:
