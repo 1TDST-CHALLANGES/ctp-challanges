@@ -14,6 +14,7 @@ desc_produto = []
 qtd_produto = []
 estoque = []
 
+
 while opcao != 7:
     print('\nMenu')
     opcao = int(input(
@@ -22,7 +23,7 @@ while opcao != 7:
 
     if opcao == 1:
         while True:
-            cod_produto = input("Código: ")
+            cod_produto = int(input("Código: "))
             if len(estoque) == 0:
                 cadastrar_produto.cadastrar_produtos()
                 break
@@ -33,6 +34,7 @@ while opcao != 7:
                     cadastrar_produto.cadastrar_produtos()
                     break
         print(f"Codigo Produto: {cod_produto}, Descricao Produto: {desc_produto}, Quantidade: {qtd_produto}, ")
+
 
     elif opcao == 2:
         cont = 3
@@ -52,13 +54,14 @@ while opcao != 7:
         senha = int(input("Digite sua senha: "))
         while senha != "yN1825*a" and cont > 1:
             print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
-            senha = int(input("Digite novamente."))
+            senha = int(input("Digite novamente. \nSenha: "))
             cont = cont - 1
         if senha == "yN1825*a":
             print("\033[32mAcesso permitido!\033[m")
             remover_produto.removerproduto()
         else:
             print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
+            exit()
 
     elif opcao == 4:
         listar_produtos.listarprodutos()
