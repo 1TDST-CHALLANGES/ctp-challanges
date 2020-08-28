@@ -2,6 +2,7 @@ import alterar_produto
 import cadastrar_produto
 import remover_produto
 import listar_produtos
+import validar_codigo
 
 opcao = 0
 
@@ -18,7 +19,18 @@ while opcao != 7:
         "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\nDigite a opção desejada: "))
     if opcao == 1:
 
-        cadastrar_produto.cadastrar_produtos()
+        while True:
+            cod_produto = input("Código: ")
+            if len(estoque) == 0:
+                cadastrar_produto.cadastrar_produtos()
+                break
+            else:
+                if cod_produto in estoque[0]:
+                    print("\033[31mCódigo já cadastrado\033[m")
+                else:
+                    cadastrar_produto.cadastrar_produtos()
+                    break
+
         print(f"Codigo Produto: {cod_produto}, Descricao Produto: {desc_produto}, Quantidade: {qtd_produto}, ")
 
     elif opcao == 2:
