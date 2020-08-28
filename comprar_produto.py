@@ -1,5 +1,6 @@
 import main
 
+
 def comprar():
     cod_produto = int(input("Código do produto: "))
     for alterar in main.estoque:

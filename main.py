@@ -3,8 +3,8 @@ import cadastrar_produto
 import remover_produto
 import listar_produtos
 import validar_codigo
-import comprarproduto
-import venderproduto
+import comprar_produto
+import vender_produto
 
 
 opcao = 0
@@ -21,7 +21,6 @@ while opcao != 7:
         "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\nDigite a opção desejada: "))
 
     if opcao == 1:
-
         while True:
             cod_produto = input("Código: ")
             if len(estoque) == 0:
@@ -33,7 +32,6 @@ while opcao != 7:
                 else:
                     cadastrar_produto.cadastrar_produtos()
                     break
-
         print(f"Codigo Produto: {cod_produto}, Descricao Produto: {desc_produto}, Quantidade: {qtd_produto}, ")
 
     elif opcao == 2:
@@ -58,7 +56,6 @@ while opcao != 7:
             cont = cont - 1
         if senha == "yN1825*a":
             print("\033[32mAcesso permitido!\033[m")
-
             remover_produto.removerproduto()
         else:
             print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
@@ -67,10 +64,10 @@ while opcao != 7:
         listar_produtos.listarprodutos()
 
     elif opcao == 5:
-        comprarproduto.comprar()
+        comprar_produto.comprar()
 
     elif opcao == 6:
-        comprarproduto.vender()
+        comprar_produto.vender()
 
     elif opcao == 7:
         print("Saindo...")
