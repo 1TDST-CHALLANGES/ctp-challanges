@@ -33,7 +33,6 @@ while opcao != 7:
                 else:
                     cadastrar_produto.cadastrar_produtos()
                     break
-        print(f"Codigo Produto: {cod_produto}, Descricao Produto: {desc_produto}, Quantidade: {qtd_produto}, ")
 
 
     elif opcao == 2:
