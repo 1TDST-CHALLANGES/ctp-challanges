@@ -14,6 +14,11 @@ desc_produto = []
 qtd_produto = []
 estoque = []
 
+def voltar():
+    voltar = int(input("\t1. Continuar 2. Voltar"))
+    while(voltar != 2):
+        continue
+
 
 while opcao != 7:
     print('\nMenu')
@@ -22,6 +27,7 @@ while opcao != 7:
         "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\nDigite a opção desejada: "))
 
     if opcao == 1:
+        #voltar()
         while True:
             cod_produto = int(input("Código: "))
             if len(estoque) == 0:
@@ -34,17 +40,16 @@ while opcao != 7:
                     cadastrar_produto.cadastrar_produtos()
                     break
 
-
     elif opcao == 2:
         cont = 3
         senha = input("Digite sua senha: ")
         while senha != "yN1825*a" and cont > 1:
             print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
-            senha = input("Digite novamente.")
+            senha = input("Digite novamente.\nSenha: ")
             cont = cont - 1
         if senha == "yN1825*a":
             print("\033[32mAcesso permitido!\033[m")
-            alterar_produto.alterarproduto()
+            alterar_produto.alterar_produto()
         else:
             print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
 
