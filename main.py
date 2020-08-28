@@ -55,10 +55,10 @@ while opcao != 7:
 
     elif opcao == 3:
         cont = 3
-        senha = int(input("Digite sua senha: "))
+        senha = input("Digite sua senha: ")
         while senha != "yN1825*a" and cont > 1:
             print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
-            senha = int(input("Digite novamente. \nSenha: "))
+            senha = input("Digite novamente. \nSenha: ")
             cont = cont - 1
         if senha == "yN1825*a":
             print("\033[32mAcesso permitido!\033[m")
