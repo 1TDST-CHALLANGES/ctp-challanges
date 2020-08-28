@@ -62,7 +62,7 @@ while opcao != 7:
 
     elif opcao == 7:
         print("Saindo...")
-        break
+        exit()
 
     else:
         print("\033[31mOpção inválida!\033[m")
