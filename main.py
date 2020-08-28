@@ -29,7 +29,7 @@ while opcao != 7:
     if opcao == 1:
         #voltar()
         while True:
-            cod_produto = int(input("Código: "))
+            cod_produto = input("Código: ")
             if len(estoque) == 0:
                 cadastrar_produto.cadastrar_produtos()
                 break
