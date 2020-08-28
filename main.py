@@ -17,12 +17,15 @@ while opcao != 7:
     opcao = int(input(
         "\t1. Cadastrar Produto\n\t2. Alterar Produto\n\t3. Excluir Produto\n\t4. Listar Estoque de Peça\n\t5. "
         "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\nDigite a opção desejada: "))
+        
     if opcao == 1:
         cod_produto = int(input("Digite um codigo(validao)? "))
         if len(estoque) == 0:
             cadastrar_produto.cadastrar_produtos()
         elif cod_produto in estoque[0]:
             print("\033[31mCódigo já cadastrado\033[m")
+        else:
+            cadastrar_produto.cadastrar_produtos()
 
     elif opcao == 2:
         cont = 3
