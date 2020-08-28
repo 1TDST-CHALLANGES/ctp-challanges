@@ -26,14 +26,13 @@ while opcao != 7:
             cod_produto = input("Código: ")
             if len(estoque) == 0:
                 cadastrar_produto.cadastrar_produtos()
-                exit()
+                break
             else:
                 if cod_produto in estoque[0]:
                     print("\033[31mCódigo já cadastrado\033[m")
                 else:
                     cadastrar_produto.cadastrar_produtos()
-                    exit()
-        print(f"Codigo Produto: {cod_produto}, Descricao Produto: {desc_produto}, Quantidade: {qtd_produto}, ")
+                   break
 
     elif opcao == 2:
         cont = 3
