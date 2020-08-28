@@ -32,7 +32,7 @@ while opcao != 7:
                     print("\033[31mCódigo já cadastrado\033[m")
                 else:
                     cadastrar_produto.cadastrar_produtos()
-                   break
+                    break
 
     elif opcao == 2:
         cont = 3
