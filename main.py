@@ -1,79 +1,54 @@
-import alterar_produto
-import cadastrar_produto
-import remover_produto
-import listar_produtos
-import validar_codigo
-import comprar_produto
-import vender_produto
+import cadastrar
+import alterar
+import excluir
+import comprar
+import vender
 
+menu = 0
 
-opcao = 0
-
-cod_produto = []
-desc_produto = []
-qtd_produto = []
+codigo = []
+descricao = []
+quantidade = []
 estoque = []
 
-
-while opcao != 7:
-    print('\nMenu')
+while menu != 7:
+    print("\nMenu")
     opcao = int(input(
-        "\t1. Cadastrar Produto\n\t2. Alterar Produto\n\t3. Excluir Produto\n\t4. Listar Estoque de Peça\n\t5. "
-        "Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\nDigite a opção desejada: "))
-
+        "\t1 - Cadastrar Produto\n\t2 - Alterar Produto\n\t3 - Excluir Produto""\n\t4 - Listar Estoque\n\t5 - Comprar Produto""\n\t6 - Vender Produto\n\t7 - Sair\n\nDigite a opção desejada: "))
     if opcao == 1:
-        while True:
-            cod_produto = int(input("Código: "))
-            if len(estoque) == 0:
-                cadastrar_produto.cadastrar_produtos()
-                break
-            else:
-                if cod_produto in estoque[0]:
-                    print("\033[31mCódigo já cadastrado\033[m")
-                else:
-                    cadastrar_produto.cadastrar_produtos()
-                    break
-
-
-    elif opcao == 2:
-        cont = 3
-        senha = input("Digite sua senha: ")
-        while senha != "yN1825*a" and cont > 1:
-            print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
-            senha = input("Digite novamente.")
-            cont = cont - 1
-        if senha == "yN1825*a":
-            print("\033[32mAcesso permitido!\033[m")
-            alterar_produto.alterarproduto()
+        codigo = input("Código do produto: ")
+        if codigo in estoque:
+            print("\033[31mCódigo já cadastrado\033[m")
         else:
-            print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
+            descricao = input("Descrição do produto: ").upper()
+            quantidade = input("Quantidade de estoque: ")
+            estoque.append([codigo, descricao, quantidade])
+            while int(quantidade) <= 0:
+                print("\033[31mNão é permitido ter estoque menor ou igual a zero\033[m")
+                quantidade = input("Quantidade de estoque: ")
+            print(estoque)
 
-    elif opcao == 3:
-        cont = 3
-        senha = int(input("Digite sua senha: "))
-        while senha != "yN1825*a" and cont > 1:
-            print("\033[31mSenha incorreta, você têm mais ", cont - 1, " tentativas.\033[m")
-            senha = int(input("Digite novamente. \nSenha: "))
-            cont = cont - 1
-        if senha == "yN1825*a":
-            print("\033[32mAcesso permitido!\033[m")
-            remover_produto.removerproduto()
-        else:
-            print("\033[31mSenha bloqueada! Procure o setor responsável.\033[m")
-            exit()
+    elif opcao == 2:  # Alterar Produto
+        alterar.alterar_produto()
 
-    elif opcao == 4:
-        listar_produtos.listarprodutos()
+    elif opcao == 3:  # Excluir Produto
+        excluir.excluir_produto()
 
-    elif opcao == 5:
-        comprar_produto.comprar()
+    elif opcao == 4:  # Listar Estoque
+        for produto in estoque:
+            print("CÓDIGO\tDESCRIÇÃO\tQUANTIDADE EM ESTOQUE:")
+            print(6 * '-', '', 9 * '-', ' ', 22 * '-')
+            print(f" {produto[0]}  {produto[1].ljust(20)} {produto[2]}")
 
-    elif opcao == 6:
-        comprar_produto.vender()
+    elif opcao == 5:  # Comprar Produto
+        comprar.comprar_produto()
 
-    elif opcao == 7:
-        print("Saindo...")
+    elif opcao == 6:  # Vender Produto
+        vender.vender_produto()
+
+    elif opcao == 7:  # Sair
+        print("\nSaindo...")
         exit()
 
     else:
-        print("\033[31mOpção inválida!\033[m")
+        print("\n\033[31mOpção Inválida! Tente Novamente\033[m")
